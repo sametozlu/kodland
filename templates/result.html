@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Quiz Result</h1>
+    <p>Thank you, <strong>{{ name }}</strong>, for completing the quiz!</p>
+    <p>Your score: <strong>{{ score }}</strong></p>
+    <button onclick="window.location.href='/'">Go Back to Quiz</button>
+    <footer>Developed by {{ user_name }}</footer>
+</body>
+</html>

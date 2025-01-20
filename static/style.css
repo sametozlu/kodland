@@ -1,0 +1,185 @@
+/* GENEL STİLLER */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #555;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: #ff6f61;
+    border-top: 3px solid #ff4f41;
+    position: relative;
+    animation: slideUp 1s ease-in-out;
+}
+
+/* FORM STİLLERİ */
+form {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    animation: scaleIn 1.2s ease-in-out;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    margin-left:-10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+    border-color: #ff6f61;
+}
+
+label {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff6f61, #ff4f41);
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff4f41, #ff6f61);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* SORULAR VE RADYO DÜĞMELERİ */
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+form p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* ANİMASYONLAR */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/*@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ALT BİLGİ VE BUTONLAR */
+footer:hover {
+    background-color: #ff4f41;
+    transition: background-color 0.5s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #ff4f41;
+}
+
+/* SONUÇ SAYFASI */
+.result-container {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.result-container h1 {
+    color: #ff6f61;
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.result-container p {
+    font-size: 1.3em;
+    color: #666;
+}
+
+/* BAŞLIKLAR VE ALTYAZILAR */
+header {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #ff6f61, #ff9f7f);
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+/* RENGARENK AYRIM ÇİZGİSİ */
+hr {
+    height: 3px;
+    background: linear-gradient(to right, #ff6f61, #ff4f41);
+    border: none;
+    margin: 20px auto;
+    width: 80%;
+}

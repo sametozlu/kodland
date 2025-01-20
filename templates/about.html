@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>About the Developer</h1>
+    <p>This quiz was developed by <strong>{{ user_name }}</strong>.</p>
+    <p>Contact: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
+    <button onclick="window.location.href='/'">Go Back</button>
+    <footer>Developed by {{ user_name }}</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Dynamic Quiz</h1>
+    {% if highest_score %}
+        <p>Highest Score: <strong>{{ highest_score.name }}</strong> with <strong>{{ highest_score.score }}</strong> points.</p>
+    {% else %}
+        <p>No scores recorded yet.</p>
+    {% endif %}
+    <form action="/submit" method="POST">
+        <p><strong>Question 1:</strong> What is your name?</p>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <p><strong>Question 2:</strong> What is your favorite color?</p>
+        <label><input type="radio" name="color" value="Red"> Red</label>
+        <label><input type="radio" name="color" value="Blue"> Blue</label>
+        <label><input type="radio" name="color" value="Green"> Green</label>
+
+        <p><strong>Question 3:</strong> What is your favorite animal?</p>
+        <label><input type="radio" name="animal" value="Dog"> Dog</label>
+        <label><input type="radio" name="animal" value="Cat"> Cat</label>
+        <label><input type="radio" name="animal" value="Parrot"> Parrot</label>
+
+        <p><strong>Question 4:</strong> Describe your hobbies or interests:</p>
+        <textarea name="hobbies" rows="4" placeholder="Write here..."></textarea>
+
+        <button type="submit">Submit Answers</button>
+    </form>
+    <footer style="position:absolute; top:795px; width: 100%;">Developed by {{ user_name }}</footer>
+</body>
+</html>
