@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Quiz</title>
+    <title>Python Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Dynamic Quiz</h1>
+    <h1>Python Quiz</h1>
     {% if highest_score %}
-        <p>Highest Score: <strong>{{ highest_score.name }}</strong> with <strong>{{ highest_score.score }}</strong> points.</p>
+        <p>En Yüksek Skor: <strong>{{ highest_score.name }}</strong>, <strong>{{ highest_score.score }}</strong> puan ile.</p>
     {% else %}
-        <p>No scores recorded yet.</p>
+        <p>Henüz kayıtlı bir skor yok.</p>
     {% endif %}
     <form action="/submit" method="POST">
-        <p><strong>Question 1:</strong> What is your name?</p>
-        <input type="text" name="name" placeholder="Enter your name" required>
+        <p><strong>Soru 1:</strong> Python'da fonksiyon nasıl tanımlanır?</p>
+        <label><input type="radio" name="function" value="def myFunction():"> def myFunction():</label>
+        <label><input type="radio" name="function" value="function myFunction():"> function myFunction():</label>
+        <label><input type="radio" name="function" value="define myFunction():"> define myFunction():</label>
 
-        <p><strong>Question 2:</strong> What is your favorite color?</p>
-        <label><input type="radio" name="color" value="Red"> Red</label>
-        <label><input type="radio" name="color" value="Blue"> Blue</label>
-        <label><input type="radio" name="color" value="Green"> Green</label>
+        <p><strong>Soru 2:</strong> Aşağıdakilerden hangisi geçerli bir liste tanımıdır?</p>
+        <label><input type="radio" name="list" value="myList = {1, 2, 3}"> myList = {1, 2, 3}</label>
+        <label><input type="radio" name="list" value="myList = [1, 2, 3]"> myList = [1, 2, 3]</label>
+        <label><input type="radio" name="list" value="myList = (1, 2, 3)"> myList = (1, 2, 3)</label>
 
-        <p><strong>Question 3:</strong> What is your favorite animal?</p>
-        <label><input type="radio" name="animal" value="Dog"> Dog</label>
-        <label><input type="radio" name="animal" value="Cat"> Cat</label>
-        <label><input type="radio" name="animal" value="Parrot"> Parrot</label>
+        <p><strong>Soru 3:</strong> Bir liste üzerinde döngü başlatmanın doğru yolu nedir?</p>
+        <label><input type="radio" name="loop" value="for i in myList:"> for i in myList:</label>
+        <label><input type="radio" name="loop" value="foreach i in myList:"> foreach i in myList:</label>
+        <label><input type="radio" name="loop" value="loop i over myList:"> loop i over myList:</label>
 
-        <p><strong>Question 4:</strong> Describe your hobbies or interests:</p>
-        <textarea name="hobbies" rows="4" placeholder="Write here..."></textarea>
+        <p><strong>Soru 4:</strong> Python'da tuple ve liste arasındaki farkı açıklayın:</p>
+        <textarea name="tuple_vs_list" rows="4" placeholder="Buraya yazın..."></textarea>
 
-        <button type="submit">Submit Answers</button>
+        <button type="submit">Cevapları Gönder</button>
     </form>
-    <footer style="position:absolute; top:795px; width: 100%;">Developed by {{ user_name }}</footer>
+    <br>
+    <footer style="position:absolute; top:795px; width: 100%;">Geliştirici: {{ user_name }}</footer>
 </body>
 </html>
