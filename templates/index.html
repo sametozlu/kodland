@@ -14,10 +14,8 @@
         <p>Henüz kayıtlı bir skor yok.</p>
     {% endif %}
     <form action="/submit" method="POST">
-        <p><strong>Soru 1:</strong> Python'da fonksiyon nasıl tanımlanır?</p>
-        <label><input type="radio" name="function" value="def myFunction():"> def myFunction():</label>
-        <label><input type="radio" name="function" value="function myFunction():"> function myFunction():</label>
-        <label><input type="radio" name="function" value="define myFunction():"> define myFunction():</label>
+        <p><strong>Soru 1:</strong> Adınız nedir?</p>
+        <input type="text" name="name" placeholder="Adınızı girin">
 
         <p><strong>Soru 2:</strong> Aşağıdakilerden hangisi geçerli bir liste tanımıdır?</p>
         <label><input type="radio" name="list" value="myList = {1, 2, 3}"> myList = {1, 2, 3}</label>
