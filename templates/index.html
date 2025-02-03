@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Python Quiz</h1>
@@ -13,26 +23,38 @@
     {% else %}
         <p>Henüz kayıtlı bir skor yok.</p>
     {% endif %}
+
     <form action="/submit" method="POST">
         <p><strong>Soru 1:</strong> Adınız nedir?</p>
         <input type="text" name="name" placeholder="Adınızı girin">
 
-        <p><strong>Soru 2:</strong> Aşağıdakilerden hangisi geçerli bir liste tanımıdır?</p>
-        <label><input type="radio" name="list" value="myList = {1, 2, 3}"> myList = {1, 2, 3}</label>
-        <label><input type="radio" name="list" value="myList = [1, 2, 3]"> myList = [1, 2, 3]</label>
-        <label><input type="radio" name="list" value="myList = (1, 2, 3)"> myList = (1, 2, 3)</label>
+        <p><strong>1. Bilgisayar Görüşü nedir?</strong></p>
+        <label><input type="radio" name="q1" value="Ses tanıma"> Ses tanıma</label><br>
+        <label><input type="radio" name="q1" value="Görsel verileri analiz etme"> Görsel verileri analiz etme</label><br>
+        <label><input type="radio" name="q1" value="Yapay zeka algoritmaları"> Yapay zeka algoritmaları</label><br>
+        <label><input type="radio" name="q1" value="Doğal dil işleme"> Doğal dil işleme</label>
 
-        <p><strong>Soru 3:</strong> Bir liste üzerinde döngü başlatmanın doğru yolu nedir?</p>
-        <label><input type="radio" name="loop" value="for i in myList:"> for i in myList:</label>
-        <label><input type="radio" name="loop" value="foreach i in myList:"> foreach i in myList:</label>
-        <label><input type="radio" name="loop" value="loop i over myList:"> loop i over myList:</label>
+        <p><strong>2. Python'da bir listeyi sıralamak için hangi metod kullanılır?</strong></p>
+        <input type="text" name="q2" placeholder="Write your answer">
 
-        <p><strong>Soru 4:</strong> Python'da tuple ve liste arasındaki farkı açıklayın:</p>
-        <textarea name="tuple_vs_list" rows="4" placeholder="Buraya yazın..."></textarea>
+        <p><strong>3. NLP (Doğal Dil İşleme) nedir?</strong></p>
+        <label><input type="radio" name="q3" value="İnsan dilini anlayan yapay zeka"> İnsan dilini anlayan yapay zeka</label><br>
+        <label><input type="radio" name="q3" value="Görsel tanıma"> Görsel tanıma</label><br>
+        <label><input type="radio" name="q3" value="Sesli komut işleme"> Sesli komut işleme</label><br>
+        <label><input type="radio" name="q3" value="Matematiksel modelleme"> Matematiksel modelleme</label>
 
-        <button type="submit">Cevapları Gönder</button>
+        <p><strong>4. Hangi Python kütüphanesi, doğal dil işleme (NLP) için yaygın olarak kullanılır?</strong></p>
+        <label><input type="radio" name="q4" value="PyTorch"> PyTorch</label><br>
+        <label><input type="radio" name="q4" value="Scikit-learn"> Scikit-learn</label><br>
+        <label><input type="radio" name="q4" value="NLTK"> NLTK</label><br>
+        <label><input type="radio" name="q4" value="NumPy"> NumPy</label>
+
+        <p><strong>5. Python'da bir listeyi tersine çevirmek için kullanılan metodun adını aşağıya yazınız.</strong></p>
+        <input type="text" name="q5" placeholder="Write your answer">
+
+        <button type="submit">Finish Quiz</button>
     </form>
-    <br>
-    <footer style="position:absolute; top:795px; width: 100%;">Geliştirici: {{ user_name }}</footer>
+
+    <footer>Geliştirici: {{ user_name }}</footer>
 </body>
 </html>
