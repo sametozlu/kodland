@@ -33,19 +33,25 @@ def submit():
     name = request.form.get('name')
     session['name'] = name  # Kullanıcı adını oturuma kaydet
 
-    # Yeni form elemanları
-    list_answer = request.form.get('list')
-    loop_answer = request.form.get('loop')
-    tuple_vs_list = request.form.get('tuple_vs_list')
+    # Form cevaplarını al
+    cv_answer = request.form.get('cv')
+    sort_method = request.form.get('sort_method')
+    nlp_answer = request.form.get('nlp')
+    nlp_library = request.form.get('nlp_library')
+    reverse_method = request.form.get('reverse_method')
 
-    # Basit puanlama sistemi (örnek olarak)
+    # Basit puanlama sistemi
     score = 0
-    if list_answer == 'myList = [1, 2, 3]':
+    if cv_answer == 'Görsel verileri analiz etme':
         score += 1
-    if loop_answer == 'for i in myList:':
+    if sort_method and sort_method.lower() == 'sort':
         score += 1
-    if tuple_vs_list:
-        score += 1  # Tuple ve liste farkına dair cevap verildiği için ek puan
+    if nlp_answer == 'İnsan dilini anlayan yapay zeka':
+        score += 1
+    if nlp_library == 'NLTK':
+        score += 1
+    if reverse_method and reverse_method.lower() == 'reverse':
+        score += 1
 
     # Puanı veritabanına kaydet
     new_score = Score(name=name, score=score)
@@ -56,7 +62,6 @@ def submit():
     highest_score = Score.query.order_by(Score.score.desc()).first()
 
     return render_template('result.html', name=name, score=score, user_name=name, highest_score=highest_score)
-
 
 # Hakkında sayfası
 @app.route('/about')
