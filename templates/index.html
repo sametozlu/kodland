@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 10px 0;
-        }
-    </style>
 </head>
 <body>
     <h1>Python Quiz</h1>
@@ -25,36 +15,38 @@
     {% endif %}
 
     <form action="/submit" method="POST">
-        <p><strong>Soru 1:</strong> Adınız nedir?</p>
-        <input type="text" name="name" placeholder="Adınızı girin">
+        <p><strong>1. Adınız nedir?</strong></p>
+        <input type="text" name="name" placeholder="Adınızı girin" required>
 
-        <p><strong>1. Bilgisayar Görüşü nedir?</strong></p>
-        <label><input type="radio" name="q1" value="Ses tanıma"> Ses tanıma</label><br>
-        <label><input type="radio" name="q1" value="Görsel verileri analiz etme"> Görsel verileri analiz etme</label><br>
-        <label><input type="radio" name="q1" value="Yapay zeka algoritmaları"> Yapay zeka algoritmaları</label><br>
-        <label><input type="radio" name="q1" value="Doğal dil işleme"> Doğal dil işleme</label>
+        <p><strong>2. Bilgisayar Görüşü nedir?</strong></p>
+        <label><input type="radio" name="cv" value="Ses tanıma"> Ses tanıma</label><br>
+        <label><input type="radio" name="cv" value="Görsel verileri analiz etme"> Görsel verileri analiz etme</label><br>
+        <label><input type="radio" name="cv" value="Yapay zeka algoritmaları"> Yapay zeka algoritmaları</label><br>
+        <label><input type="radio" name="cv" value="Doğal dil işleme"> Doğal dil işleme</label><br>
 
-        <p><strong>2. Python'da bir listeyi sıralamak için hangi metod kullanılır?</strong></p>
-        <input type="text" name="q2" placeholder="Write your answer">
+        <p><strong>3. Python'da bir listeyi sıralamak için hangi metod kullanılır?</strong></p>
+        <input type="text" name="sort_method" placeholder="Cevabınızı yazın" required>
 
-        <p><strong>3. NLP (Doğal Dil İşleme) nedir?</strong></p>
-        <label><input type="radio" name="q3" value="İnsan dilini anlayan yapay zeka"> İnsan dilini anlayan yapay zeka</label><br>
-        <label><input type="radio" name="q3" value="Görsel tanıma"> Görsel tanıma</label><br>
-        <label><input type="radio" name="q3" value="Sesli komut işleme"> Sesli komut işleme</label><br>
-        <label><input type="radio" name="q3" value="Matematiksel modelleme"> Matematiksel modelleme</label>
+        <p><strong>4. NLP (Doğal Dil İşleme) nedir?</strong></p>
+        <label><input type="radio" name="nlp" value="İnsan dilini anlayan yapay zeka"> İnsan dilini anlayan yapay zeka</label><br>
+        <label><input type="radio" name="nlp" value="Görsel tanıma"> Görsel tanıma</label><br>
+        <label><input type="radio" name="nlp" value="Sesli komut işleme"> Sesli komut işleme</label><br>
+        <label><input type="radio" name="nlp" value="Matematiksel modelleme"> Matematiksel modelleme</label><br>
 
-        <p><strong>4. Hangi Python kütüphanesi, doğal dil işleme (NLP) için yaygın olarak kullanılır?</strong></p>
-        <label><input type="radio" name="q4" value="PyTorch"> PyTorch</label><br>
-        <label><input type="radio" name="q4" value="Scikit-learn"> Scikit-learn</label><br>
-        <label><input type="radio" name="q4" value="NLTK"> NLTK</label><br>
-        <label><input type="radio" name="q4" value="NumPy"> NumPy</label>
+        <p><strong>5. Hangi Python kütüphanesi, doğal dil işleme (NLP) için yaygın olarak kullanılır?</strong></p>
+        <label><input type="radio" name="nlp_library" value="PyTorch"> PyTorch</label><br>
+        <label><input type="radio" name="nlp_library" value="Scikit-learn"> Scikit-learn</label><br>
+        <label><input type="radio" name="nlp_library" value="NLTK"> NLTK</label><br>
+        <label><input type="radio" name="nlp_library" value="NumPy"> NumPy</label><br>
 
-        <p><strong>5. Python'da bir listeyi tersine çevirmek için kullanılan metodun adını aşağıya yazınız.</strong></p>
-        <input type="text" name="q5" placeholder="Write your answer">
+        <p><strong>6. Python'da bir listeyi tersine çevirmek için kullanılan metodun adı nedir?</strong></p>
+        <input type="text" name="reverse_method" placeholder="Cevabınızı yazın" required>
 
-        <button type="submit">Finish Quiz</button>
+        <button type="submit">Cevapları Gönder</button>
     </form>
 
-    <footer>Geliştirici: {{ user_name }}</footer>
+    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; background-color: #f1f1f1; padding: 10px;">
+        Geliştirici: {{ user_name }}
+    </footer>
 </body>
 </html>
